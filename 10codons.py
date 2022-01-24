@@ -9,8 +9,8 @@ dna = 'ATAGCGAATATCTCTCATGAGAGGGAA'
 
 
 
-for i in range(len(dna)):
-	print(dna[i:i[3]]
+for i in range(0, len(dna), 3):
+	print(dna[i: i+3])
 
 
 
