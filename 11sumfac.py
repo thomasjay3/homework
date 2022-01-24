@@ -5,6 +5,12 @@
 # No, you may not use math.factorial()
 # Use the same loop for both calculations
 
+
+
+
+
+# your code goes here
+
 n = 5
 sum = 0
 factorial = 1
@@ -13,22 +19,15 @@ factorial = 1
 for i in range(1 ,n + 1):
 
 
-	# sum += range(1, n + 1)[i]
 
 	sum += i
 
 	factorial = factorial * i
 
-	# factorial = factorial * range(1, n + 1)[i]
 
 print(n,sum,factorial)
 
-	# if i = 0:
-	# 	print(sum)
 
-
-
-# your code goes here
 
 """
 python3 11sumfac.py
