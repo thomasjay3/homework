@@ -7,7 +7,7 @@ dna = 'ACTGAAAAAAAAAAA'
 complement = ''
 
 for i in range(len(dna)+1):
-	if dna[-i] == 'A':
+	if   dna[-i] == 'A':
 		complement += 'T'
 	elif dna[-i] == 'T':
 		complement += 'A'
@@ -16,8 +16,9 @@ for i in range(len(dna)+1):
 	else:
 		complement += 'C'
 
-print(complement)
+print(complement)	
 
+# I worked with Tiffany, krikor, and Bree
 
 
 """

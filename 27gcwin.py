@@ -3,27 +3,39 @@
 # Write a program that computes the GC fraction of a DNA sequence in a window
 # Window size is 11 nt
 # Output with 4 significant figures using whichever method you prefer
-# Use nested loops
+# Use no nested loops. Instead, count only the first window
+# Then 'move' the window by adding 1 letter on one side
+# And subtracting 1 letter from the other side
+# Describe the pros/cons of this algorith vs. nested loops
 
 seq = 'ACGACGCAGGAGGAGAGTTTCAGAGATCACGAATACATCCATATTACCCAGAGAGAG'
-nucleotides = 11
-position = 0
 
-for i in range(len(seq)-nucleotides+1):
-	GC_total = 0
-	for k in range(position, nucleotides + position):
-		if   seq[k] == 'G':
-			GC_total += 1
-		elif seq[k] == 'C':
-			GC_total += 1
+window = 11
+gc = 0
 
-	print(i,seq[position:nucleotides+position], '%.4f' % (GC_total/nucleotides))
-	position += 1
-# I worked with Tiffany, krikor, and Bree
+for nt in seq[:window]:
+	if nt == 'C' or nt =='G': gc += 1
 
+for i in range(len(seq) - window):
+	old = seq[i-1]
+	new = seq[i + window ]
+	if i == 0: gc += 0
+	elif old == 'C' or old == 'G': 
+		gc -= 1
+
+	if new == 'C' or new == 'C': 
+		gc += 1
+
+
+	print(i, seq[i:i + window], gc)
+
+
+# I know I'm not quite done yet, but I have 2 exams on Thursday that I need to study for. I spent a really long time on this program over the weekend because I misunderstood the directions and spent my whole time trying to make it work with a single loop
+# I will finish this soon. 
+# I worked with Tiffany, krikor, Hongtao, and Bree
 
 """
-python3 26gcwin.py
+python3 27gcwin.py
 0 ACGACGCAGGA 0.6364
 1 CGACGCAGGAG 0.7273
 2 GACGCAGGAGG 0.7273

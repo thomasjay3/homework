@@ -14,6 +14,10 @@ for i in range(len(amino_accids)):
 			number+=1
 			print(amino_accids[i], amino_accids[k])
 print(number)
+
+# I worked with Tiffany, krikor,  and Bree
+
+
 """
 python3 25aapairs.py
 A C

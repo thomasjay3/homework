@@ -33,6 +33,7 @@ percent = num/len(random_nucleotide)
 
 print(percent, random_nucleotide)
 
+# I worked with Tiffany, krikor, and Bree
 
 
 """

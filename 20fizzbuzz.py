@@ -8,7 +8,7 @@
 
 
 for i in range(1, 101):
-	if i%15 == 0:
+	if  i%15 == 0:
 		print("FizzBuzz")
 	elif i%3 == 0:
 		print("Fizz")
@@ -17,8 +17,7 @@ for i in range(1, 101):
 	else:	
 		print(i)
 
-
-
+# I worked with Tiffany, krikor, and Bree
 
 """
 python3 20fizzbuzz.py

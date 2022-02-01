@@ -9,7 +9,7 @@ num = 0
 
 
 for i in range(len(dna)):
-	if dna[i] == 'G':
+	if   dna[i] == 'G':
 		num += 1
 	elif dna[i] == 'C':
 		num += 1
@@ -21,6 +21,7 @@ print('%.2f' % (percent))
 print('{:.2f}'.format(percent))
 print(f'{percent:.2f}')
 
+# I worked with Tiffany, krikor, and Bree
 
 
 """
