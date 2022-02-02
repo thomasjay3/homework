@@ -31,9 +31,7 @@ for i in range(1, len(seq) - window +1):
 
 	print(i, seq[i:i + window], f'{gc/window:.4f}')
 
-# I know I'm not quite done yet, but I have 2 exams on Thursday that I need to study for. I spent a really long time on this program over the weekend because I misunderstood the directions and spent my whole time trying to make it work with a single loop
-# I will finish this soon. 
-# I worked with Tiffany, krikor, Hongtao, and Bree
+# I worked with Tiffany, krikor, Hongtao, Bree, and TA keith
 
 """
 python3 27gcwin.py
