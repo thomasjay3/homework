@@ -16,19 +16,20 @@ gc = 0
 for nt in seq[:window]:
 	if nt == 'C' or nt =='G': gc += 1
 
-for i in range(len(seq) - window):
+print(0,seq[:window], f'{gc/window:.4f}')
+
+for i in range(1, len(seq) - window +1):
 	old = seq[i-1]
-	new = seq[i + window ]
-	if i == 0: gc += 0
-	elif old == 'C' or old == 'G': 
+	new = seq[i + window - 1]
+
+	if old == 'C' or old == 'G': 
 		gc -= 1
 
-	if new == 'C' or new == 'C': 
+	if new == 'C' or new == 'G': 
 		gc += 1
 
 
-	print(i, seq[i:i + window], gc)
-
+	print(i, seq[i:i + window], f'{gc/window:.4f}')
 
 # I know I'm not quite done yet, but I have 2 exams on Thursday that I need to study for. I spent a really long time on this program over the weekend because I misunderstood the directions and spent my whole time trying to make it work with a single loop
 # I will finish this soon. 
