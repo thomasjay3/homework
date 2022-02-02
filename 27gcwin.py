@@ -21,14 +21,10 @@ print(0,seq[:window], f'{gc/window:.4f}')
 for i in range(1, len(seq) - window +1):
 	old = seq[i-1]
 	new = seq[i + window - 1]
-
 	if old == 'C' or old == 'G': 
 		gc -= 1
-
 	if new == 'C' or new == 'G': 
 		gc += 1
-
-
 	print(i, seq[i:i + window], f'{gc/window:.4f}')
 
 # I worked with Tiffany, krikor, Hongtao, Bree, and TA keith
