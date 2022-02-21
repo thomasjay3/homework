@@ -57,11 +57,12 @@ protein_list = protein_list[1:]
 
 
 
-
 # KD calculation
 def kd(protein):
 	hydrophobicity = 0
+	length = 0
 	for aa in protein:
+		length += 1
 		if aa ==   "I": hydrophobicity += 4.5
 		elif aa == "V": hydrophobicity += 4.2
 		elif aa == "L": hydrophobicity += 3.8
@@ -82,7 +83,7 @@ def kd(protein):
 		elif aa == "N": hydrophobicity -= 3.5
 		elif aa == "K": hydrophobicity -= 3.9
 		elif aa == "R": hydrophobicity -= 4.5
-	return hydrophobicity
+	return hydrophobicity/ length
 
 def fatty_seq(protein, window, threshold):
 	for i in range(len(protein) - window + 1):
