@@ -30,12 +30,12 @@ def piercer(low, high, trials):
 	print(f'Jorge average ={jorge_sum/trials}. Gastin average ={gastin_sum/trials}')
 
 
-piercer(1, 10, 1000)
+# piercer(1, 10, 1000)
 
 # I wasn't expecting their average rolls to be so close. interesting! I wonder which is the best number to set at your reroll threshold in this sitution. 
 
 
-# This function returns the best number to reroll on given the type of dice. seems to be 13 for a d20, pretty cool!
+# This function returns the best number to reroll on given the type of dice. seems to be 12 for a d20, pretty cool!
 def reroll(low, high, trials):
 	group = []
 	for i in range(low, high):
@@ -57,6 +57,6 @@ def reroll(low, high, trials):
 		if group[i] > max_average:
 			max_average = i
 	print(group)
-	return max_average
+	return max_average - 1
 
-print(reroll(1, 20, 10000))
+print(reroll(1, 10, 10000))
