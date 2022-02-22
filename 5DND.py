@@ -9,7 +9,6 @@ import sys
 
 
 
-
 def piercer(low, high, trials):
 	jorge_sum = 0
 	gastin_sum = 0
@@ -28,15 +27,15 @@ def piercer(low, high, trials):
 		else:
 			gastin = random.randint(low, high)
 			gastin_sum += reroll
-		print()
 	print(f'Jorge average ={jorge_sum/trials}. Gastin average ={gastin_sum/trials}')
 
 
-# piercer(1, 10, 100000)
+piercer(1, 10, 1000)
 
 # I wasn't expecting their average rolls to be so close. interesting! I wonder which is the best number to set at your reroll threshold in this sitution. 
 
 
+# This function returns the best number to reroll on given the type of dice. seems to be 13 for a d20, pretty cool!
 def reroll(low, high, trials):
 	group = []
 	for i in range(low, high):
@@ -53,6 +52,11 @@ def reroll(low, high, trials):
 
 	for i in range(low, high -1):
 		group[i] = group[i] / trials
+	max_average = 0
+	for i in range(len(group)):
+		if group[i] > max_average:
+			max_average = i
 	print(group)
-	return group
-reroll(1, 10, 10000)
+	return max_average
+
+print(reroll(1, 20, 10000))
