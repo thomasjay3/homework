@@ -6,7 +6,7 @@
 
 import random
 import sys
-
+import matplotlib.pyplot as mpl
 
 
 def piercer(low, high, trials):
@@ -35,7 +35,12 @@ def piercer(low, high, trials):
 # I wasn't expecting their average rolls to be so close. interesting! I wonder which is the best number to set at your reroll threshold in this sitution. 
 
 
-# This function returns the best number to reroll on given the type of dice. seems to be 12 for a d20, pretty cool!
+# This function returns the best number to reroll on given the type of dice. seems to be 6 on a d10 and 12 for a d20, pretty cool!
+# wow 63 on a d100 and 638 on a d1000
+# I want to know what number its approaching and why!
+
+
+
 def reroll(low, high, trials):
 	group = []
 	for i in range(low, high):
@@ -57,6 +62,9 @@ def reroll(low, high, trials):
 		if group[i] > max_average:
 			max_average = i
 	print(group)
-	return max_average - 1
+	return max_average - 1, group
 
-print(reroll(1, 10, 10000))
+
+ma, grp = reroll(1, 10, 1000	)
+mpl.plot(grp)
+mpl.show()
