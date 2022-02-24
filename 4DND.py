@@ -4,39 +4,31 @@
 
 import random
 import sys
+import DnD1
 
-trials = 10000
-
-
+trials = 100000
 
 def fire_bolt():
 	if sys.argv[1] == "adept":
 		sum = 0
 		for i in range(trials):
-			dice = random.randint(1,10)
+			dice = DnD1.roll(1, 10)
 			if dice == 1:
-				dice2 = random.randint(1,10)
+				dice2 = DnD1.roll(1, 10)
 				sum += dice2
 				# print(dice2)
-
 			else: 
 				# print(dice)	
 				sum += dice
-
 		average = sum/trials
 		print(average)
-
-
 	elif sys.argv[1] != "adept":
 		sum = 0
 		for i in range(trials):
-			dice = random.randint(1,10)
+			dice = DnD1.roll(1, 10)
 			# print(dice)
 			sum += dice
 		average = sum/trials
 		print(average)
-
-
-
 
 fire_bolt()

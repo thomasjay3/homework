@@ -1,9 +1,5 @@
 import random
-
-
-
-
-
+import DnD1 
 
 def unconscious():
 	# print("You have become unconscious and may die.")
@@ -15,8 +11,7 @@ def unconscious():
 	d = "died"
 	r = "revived"
 	while health == 0:
-		dice = random.randint(1,20)
-		# print(dice)
+		dice = DnD1.roll(1, 20)
 		attempts += 1
 		if success > 1:
 			# print("You have stabilized!")
@@ -26,7 +21,7 @@ def unconscious():
 			# print("You have died!")
 			health -= 1
 			return d
-		if   dice < 1:  failure += 2
+		if   dice < 2:  failure += 2
 		elif dice < 10: failure += 1
 		elif dice < 20: success += 1
 		else: 
@@ -34,18 +29,18 @@ def unconscious():
 			health += 1
 			return r
 
-
-# Probability approximation calculator
-attempts = 100000
-stabilized = 0
-revived = 0
-died = 0
-for i in range(attempts):
-	# print(unconscious())
-	if unconscious() == "stabilized": stabilized += 1
-	elif unconscious() == 'revived':  revived += 1
-	else: died += 1
-print(f' P(stabilization) = {stabilized/attempts}, P(revival) = {revived/attempts}, P(death) = {died/attempts}')
+if __name__ == "__main__": 
+	# Probability approximation calculator
+	attempts = 100000
+	stabilized = 0
+	revived = 0
+	died = 0
+	for i in range(attempts):
+		# print(unconscious())
+		if unconscious() == "stabilized": stabilized += 1
+		elif unconscious() == 'revived':  revived += 1
+		else: died += 1
+	print(f' P(stabilization) = {stabilized/attempts}, P(revival) = {revived/attempts}, P(death) = {died/attempts}')
 
 # Death saves are a little different than normal saving throws. 
 # If your health drops to 0 or below, you are unconscious and may die. 
