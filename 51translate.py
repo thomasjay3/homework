@@ -28,10 +28,9 @@ gcode = {
 	'TTA' : 'L',	'TTC' : 'F',	'TTG' : 'L',	'TTT' : 'F',
 }
 
-def read_fasta():
+def read_fasta(filename):
 	names = []
-	assert(len(sys.argv) == 2)
-	with open(sys.argv[1]) as fp:
+	with open(filename) as fp:
 		seq = ""
 		for line in fp.readlines():
 			if line[0] == ">":
@@ -41,10 +40,10 @@ def read_fasta():
 				line = line.upper()
 				seq += line.rstrip()
 	return seq
+# 
 
-
-def translate():
-	seq = read_fasta()
+def translate(filename):
+	seq = read_fasta(filename)
 	protein = ""
 	for aa in range(0,len(seq),3):
 		codon = seq[aa:aa+3]
@@ -56,8 +55,8 @@ def translate():
 
 	return protein
 		
-
-print(translate())
+assert(len(sys.argv) == 2) 
+print(translate(sys.argv[1]))
 
 
 """
